@@ -6,12 +6,17 @@
 //  Copyright © 2019 Vivek Gupta inc. All rights reserved.
 //
 
+
 import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
 
+var currentGameType = gameType.medium
+
+
+class GameViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +25,8 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                
+                scene.size = view.bounds.size
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -31,5 +38,15 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
-
+    
+ 
+    
+   
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Release any cached data, images, etc that aren't in use.
+    }
+    
+  
 }
